@@ -24,7 +24,7 @@
     };
   in {
     nixosConfigurations = {
-      ambition = mkSystem "ambition" "x86_64-linux";
+      elorune = mkSystem "elorune" "x86_64-linux";
     };
   };
 }

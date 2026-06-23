@@ -1,7 +1,8 @@
 { config, pkgs, inputs, name, system, ... }: {
 
   imports = [
-    ./hardware.nix
-    ./system.nix
+    ./user.nix
+    ./nix.nix
+    ./region.nix
   ];
 }
