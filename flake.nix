@@ -15,7 +15,7 @@
   let  
     mkConfiguration = name: usernames: system: nixpkgs.lib.nixosSystem {
       inherit system; 
-      
+
       specialArgs = {
         inherit inputs system usernames name;
       };
@@ -27,7 +27,7 @@
     };
   in {
     nixosConfigurations = {
-      workstation = mkConfiguration "northwind" [ "emkay" "alice" ] "x86_64-linux";
+      workstation = mkConfiguration "northwind" [ "emkay" "test" ] "x86_64-linux";
     };
   };
 }
