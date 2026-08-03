@@ -2,8 +2,8 @@
 
   imports = [
     ./hardware.nix
-    ./system.nix
-
-    ../../users/emkay
+    ./boot.nix
+    ./network.nix
+    ./audio.nix
   ];
 }

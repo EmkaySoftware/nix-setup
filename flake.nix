@@ -13,18 +13,21 @@
 
   outputs = { self, nixpkgs, home-manager, ... } @inputs: 
   let  
-    mkSystem = name: system: nixpkgs.lib.nixosSystem {
+    mkConfiguration = name: usernames: system: nixpkgs.lib.nixosSystem {
+      inherit system; 
+      
       specialArgs = {
-        inherit inputs system name;
+        inherit inputs system usernames name;
       };
 
       modules = [
-        ./hosts/${name}
-      ];
+        ./machines/${name}
+      ] 
+      ++ map (username: ./users/${username}) usernames;
     };
   in {
     nixosConfigurations = {
-      elorune = mkSystem "elorune" "x86_64-linux";
+      workstation = mkConfiguration "northwind" [ "emkay" "alice" ] "x86_64-linux";
     };
   };
 }
