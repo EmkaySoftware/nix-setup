@@ -27,20 +27,20 @@
 	"$mod, D, exec, wofi --show drun"
 
 	# Window controls
-	"$mod, LEFT, movefocus, l"
-	"$mod, RIGHT, movefocus, r"
-	"$mod, UP, movefocus, u"
-	"$mod, DOWN, movefocus, d"
+	"$mod, left, movefocus, l"
+	"$mod, right, movefocus, r"
+	"$mod, up, movefocus, u"
+	"$mod, down, movefocus, d"
 
-	"$mod, CTRL, LEFT, movewindow, l"
-	"$mod, CTRL, RIGHT, movewindow, r"
-	"$mod, CTRL, UP, movewindow, u"
-	"$mod, CTRL, DOWN, movewindow, d"
+	"$mod CTRL, left, movewindow, l"
+	"$mod CTRL, right, movewindow, r"
+	"$mod CTRL, up, movewindow, u"
+	"$mod CTRL, down, movewindow, d"
 
-	"$mod, SHIFT, LEFT, swapwindow, l"
-	"$mod, SHIFT, RIGHT, swapwindow, r"
-	"$mod, SHIFT, UP, swapwindow, u"
-	"$mod, SHIFT, DOWN, swapwindow, d"
+	"$mod SHIFT, left, swapwindow, l"
+	"$mod SHIFT, right, swapwindow, r"
+	"$mod SHIFT, up, swapwindow, u"
+	"$mod SHIFT, down, swapwindow, d"
 
 	# Window layout controls
       ];
