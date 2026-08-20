@@ -1,6 +1,6 @@
-{ config, pkgs, inputs, username, ... }: 
+{ config, pkgs, inputs, machineName ... }: 
 {
-  networking.hostName = "${username}";
+  networking.hostName = "${machineName}";
   networking.networkmanager.enable = true;
 }
   
