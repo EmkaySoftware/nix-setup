@@ -10,7 +10,7 @@
     extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   };
 
-  # Each one of these should be features...
+  # TODO: Each one of these should be features...
   environment.systemPackages = with pkgs; [
     waybar
     wofi
@@ -26,6 +26,5 @@
     google-chrome
   ];
 
-  # Enable polkit agent for privileged actions
   security.polkit.enable = true;
 }

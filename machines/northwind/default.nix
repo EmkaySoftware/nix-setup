@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, name, system, ... }: {
+{ config, pkgs, inputs, username, system, ... }: {
 
   imports = [
     ./hardware.nix
@@ -6,4 +6,6 @@
     ./network.nix
     ./audio.nix
   ];
+
+  system.stateVersion = "25.05"; 
 }
