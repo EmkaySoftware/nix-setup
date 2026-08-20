@@ -23,6 +23,19 @@
       modules = [
         ./machines/${machineName}
         ./users/${username}
+        home-manager.nixosModules.home-manager
+	{
+	  home-manager = {
+	    useGlobalPkgs = true;
+ 	    useUserPackages = true;
+	    
+ 	    extraSpecialArgs = {
+	      inherit inputs system machineName username;
+	    };
+
+  	    users.${username} = import ./users/${username}/home.nix;
+	  };
+	}
       ];
     };
   in {
