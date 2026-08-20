@@ -29,7 +29,7 @@ A feature is the concrete installation of a certain software or a combination of
 |     Machine     |
 +-----------------+
          |
-         | 0..*
+         | 1..*
          v
 +-----------------+
 |      User       |

@@ -1,9 +1,0 @@
-{ config, pkgs, ... }:
-
-{
-  users.users.emkay = {
-    isNormalUser = true;
-    description = "Default user";
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
-  };
-}

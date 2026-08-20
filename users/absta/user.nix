@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  users.users.test = {
+  users.users.absta = {
     isNormalUser = true;
-    description = "Default user";
+    description = "Primary user";
     extraGroups = [ "wheel" "networkmanager" ];
   };
 }
