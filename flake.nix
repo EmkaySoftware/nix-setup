@@ -40,7 +40,7 @@
     };
   in {
     nixosConfigurations = {
-      workstation = mkConfiguration "northwind" "absta" "x86_64-linux";
+      northwind = mkConfiguration "northwind" "absta" "x86_64-linux";
     };
   };
 }
