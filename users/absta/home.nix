@@ -14,8 +14,10 @@
     settings = {
       "$mod" = "SUPER";
       
-      monitor = [
-        ",preferred,auto,1"
+      monitors = [
+        "DP-1,2560x1440@144,0x0,1"
+        "HDMI-A-1,2560x1440@144,2560x0,1"
+        "DP-2,2560x1440@144,5120x0,1"
       ];
     
       input = {
