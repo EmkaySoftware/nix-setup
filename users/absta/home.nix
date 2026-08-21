@@ -5,6 +5,7 @@
   
   home.packages = with pkgs; [
     kitty
+    osu-lazer-bin
   ];
 
   wayland.windowManager.hyprland = {
