@@ -58,5 +58,8 @@
     };
   };
 
-  imports = lib.optional config.profiles.git.active ./git.nix
+  # Submodules of home that are profile dependent and guarded by mkIf.
+  imports = [
+    ./git.nix
+  ];
 }
