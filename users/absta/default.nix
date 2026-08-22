@@ -4,6 +4,5 @@
     ./user.nix
     ./nix.nix
     ./region.nix
-    ./profiles.nix
   ];
 }
