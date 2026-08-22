@@ -33,7 +33,7 @@
 	      inherit inputs system machineName username;
 	    };
 
-  	    users.${username} = import ./users/${username}/home.nix;
+  	    users.${username} = import ./users/${username}/home;
 	  };
 	}
       ];

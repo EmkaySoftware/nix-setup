@@ -1,7 +1,7 @@
-{ pkgs, username, ... }: {
+{ lib, config, pkgs, username, ... }: {
   home.username = username;
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "26.05";
+  home.stateVersion = "26.11";
   
   home.packages = with pkgs; [
     kitty
@@ -10,14 +10,17 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+
+    # TODO: Hyprlang is on it's way out, see if we can generate a lua config.
     configType = "hyprlang";
     settings = {
       "$mod" = "SUPER";
       
+      # Something is borked on DP-2 that it causes flashing.
       monitor = [
         "DP-1,2560x1440@100,0x0,1"
         "HDMI-A-1,2560x1440@144,2560x0,1"
-        "DP-2,2560x1440@100,5120x0,1"
+        "DP-2,2560x1440@60,5120x0,1"
       ];
     
       input = {
@@ -54,4 +57,6 @@
       ];
     };
   };
+
+  imports = lib.optional config.profiles.git.active ./git.nix
 }

@@ -2,6 +2,8 @@
 
 {
   imports = [
-    ../../profiles/hyprland-full-desktop.nix
+    ../../profiles
+    ../../profiles/hyprland.nix
+    ../../profiles/git.nix
   ];
 }
