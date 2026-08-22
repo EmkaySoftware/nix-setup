@@ -60,6 +60,7 @@
 
   # Submodules of home that are profile dependent and guarded by mkIf.
   imports = [
+    ../../../profiles
     ./git.nix
   ];
 }
