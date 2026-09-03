@@ -10,11 +10,5 @@
     };
   };
 
-  # This shouldn't live in greeter...
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";     # Electron/Chromium apps use native Wayland
-    WLR_NO_HARDWARE_CURSORS = "1";
-  };
-
   services.dbus.enable = true;
 }
