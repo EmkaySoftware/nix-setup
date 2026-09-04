@@ -4,5 +4,6 @@
     ./user.nix
     ./nix.nix
     ./region.nix
+    ./security.nix
   ];
 }

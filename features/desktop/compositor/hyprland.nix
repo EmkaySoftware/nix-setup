@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  programs.hyprland = {
+  wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
@@ -11,7 +11,7 @@
   };
 
   # TODO: Each one of these should be features...
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     waybar
     wofi
     swaybg
@@ -24,6 +24,4 @@
     mousepad
     google-chrome
   ];
-
-  security.polkit.enable = true;
 }

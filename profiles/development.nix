@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  import = [
+  imports = [
     ../features/development/ide/codium.nix
   ];
 
