@@ -1,0 +1,5 @@
+[
+  "hyprland"
+  "greetd"
+  "git"
+]

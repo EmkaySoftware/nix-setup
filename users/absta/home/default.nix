@@ -1,18 +1,17 @@
-{ lib, config, pkgs, username, ... }: {
+{ lib, config, pkgs, username, ... }:
+let
+  modLib = import ../../../modules/lib.nix { inherit lib; };
+  active = import ../active-modules.nix;
+  userConfig = lib.filter builtins.pathExists (map (n: ./. + "/${n}.nix") active);
+in {
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "26.11";
-  
+
   home.packages = with pkgs; [
     kitty
     osu-lazer-bin
   ];
 
-  # Submodules of home that are profile dependent and guarded by mkIf.
-  imports = [
-    ../../../profiles
-    ./profiles.nix
-    ./hyprland.nix
-    ./git.nix
-  ];
+  imports = modLib.mkModules "home" active ++ userConfig;
 }

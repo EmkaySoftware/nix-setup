@@ -1,51 +1,50 @@
-{ config, lib, ... }: {
+{ pkgs, ... }:
+{
+  wayland.windowManager.hyprland = {
 
-  config = lib.mkIf config.profiles.hyprland.active { 
-    wayland.windowManager.hyprland = {
-    
-      # TODO: Hyprlang is on it's way out, see if we can generate a lua config.
-      configType = "hyprlang";
-      settings = {
-        "$mod" = "SUPER";
-      
-        # Something is borked on DP-2 that it causes flashing.
-        monitor = [
-          "DP-1,2560x1440@100,0x0,1"
-          "HDMI-A-1,2560x1440@144,2560x0,1"
-          "DP-2,2560x1440@60,5120x0,1"
-        ];
-    
-        input = {
-          left_handed = true;
-        };
+    # TODO: Hyprlang is on it's way out, see if we can generate a lua config.
+    configType = "hyprlang";
+    settings = {
+      "$mod" = "SUPER";
 
-        bind = [
-          # App commands
-          "$mod, T, exec, kitty"
-          "$mod, Q, killactive"
-          "$mod, D, exec, wofi --show drun"
+      # Something is borked on DP-2 that it causes flashing.
+      monitor = [
+        "DP-1,2560x1440@100,0x0,1"
+        "HDMI-A-1,2560x1440@144,2560x0,1"
+        "DP-2,2560x1440@60,5120x0,1"
+      ];
 
-          # Window controls
-          "$mod, left, movefocus, l"
-          "$mod, right, movefocus, r"
-          "$mod, up, movefocus, u"
-          "$mod, down, movefocus, d"
-
-          "$mod CTRL, left, movewindow, l"
-          "$mod CTRL, right, movewindow, r"
-          "$mod CTRL, up, movewindow, u"
-          "$mod CTRL, down, movewindow, d"
-
-          "$mod SHIFT, left, swapwindow, l"
-          "$mod SHIFT, right, swapwindow, r"
-          "$mod SHIFT, up, swapwindow, u"
-          "$mod SHIFT, down, swapwindow, d"
-        ];
-
-        exec-once = [
-          "waybar"
-        ];
+      input = {
+        left_handed = true;
       };
+
+      bind = [
+        # App commands
+        "$mod, T, exec, kitty"
+        "$mod, Q, killactive"
+        "$mod, D, exec, wofi --show drun"
+
+        # Window controls
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+
+        "$mod CTRL, left, movewindow, l"
+        "$mod CTRL, right, movewindow, r"
+        "$mod CTRL, up, movewindow, u"
+        "$mod CTRL, down, movewindow, d"
+
+        "$mod SHIFT, left, swapwindow, l"
+        "$mod SHIFT, right, swapwindow, r"
+        "$mod SHIFT, up, swapwindow, u"
+        "$mod SHIFT, down, swapwindow, d"
+      ];
+
+      exec-once = [
+        "waybar"
+        "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+      ];
     };
   };
 }
