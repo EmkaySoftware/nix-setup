@@ -2,4 +2,5 @@
   "hyprland"
   "greetd"
   "git"
+  "codium"
 ]
