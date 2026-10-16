@@ -3,4 +3,5 @@
   "greetd"
   "git"
   "codium"
+  "thunar"
 ]
